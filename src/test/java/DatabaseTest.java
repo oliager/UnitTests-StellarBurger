@@ -17,7 +17,7 @@ public class DatabaseTest {
         Database database = new Database();
         List<Bun> actualBuns = database.availableBuns();
 
-        assertTrue(!(actualBuns.isEmpty()));
+        assertFalse(actualBuns.isEmpty());
     }
     @Test
     public void testAvailableBunsReturnsThreeBuns(){

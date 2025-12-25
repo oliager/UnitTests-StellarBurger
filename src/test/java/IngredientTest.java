@@ -11,20 +11,21 @@ public class IngredientTest {
     private final static float SAUCE_PRICE = 1.4f;
     private final static String FILLING_NAME = "fish";
     private final static float FILLING_PRICE = 1.4f;
+    private final static float DELTA = 0.0001f;
 
     @Test
     public void testGetPriceReturnsPrice(){
         Ingredient ingredient = new Ingredient(SAUCE, SAUCE_NAME, SAUCE_PRICE);
         float actualPrice = ingredient.getPrice();
 
-        assertEquals(SAUCE_PRICE, actualPrice, 0.0001f);
+        assertEquals(SAUCE_PRICE, actualPrice, DELTA);
     }
     @Test
     public void testGetPriceReturnsNegativeWhenPriceIsNegative(){
         Ingredient ingredient = new Ingredient(SAUCE, SAUCE_NAME, -1f);
         float actualPrice = ingredient.getPrice();
 
-        assertEquals(-1f, actualPrice, 0.0001f);
+        assertEquals(-1f, actualPrice, DELTA);
     }
 
     @Test
@@ -32,7 +33,7 @@ public class IngredientTest {
         Ingredient ingredient = new Ingredient(SAUCE, SAUCE_NAME, 0);
         float actualPrice = ingredient.getPrice();
 
-        assertEquals(0, actualPrice, 0.0001f);
+        assertEquals(0, actualPrice, DELTA);
     }
     @Test
     public void testGetNameReturnsNameOfIngredient(){
